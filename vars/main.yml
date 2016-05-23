@@ -1,0 +1,8 @@
+nodejs_version: "4.x"
+nodejs_npm_global_packages:
+  - name: knex
+  - name: bower
+  - name: supervisor
+  - name: pm2
+  - name: node-inspector
+  - name: jslint
