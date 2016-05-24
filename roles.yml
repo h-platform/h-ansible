@@ -1,9 +1,10 @@
 ---
 #roles to be installed
 #to install these roles, use command:
-#    ansible-galaxy install -r roles.txt
+#    sudo ansible-galaxy install -r roles.yml
 
  - leonidas.nvm
  - geerlingguy.nginx
  - geerlingguy.mysql
  - geerlingguy.git
+ - dirn.tmux

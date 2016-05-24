@@ -22,17 +22,16 @@ sudo nano /etc/ansible/hosts
 
 ```
 [hosts]
-host-01 ansible_ssh_host=127.0.0.1 ansible_ssh_user='vagrant' ansible_sudo_pass='123456'
+host-01 ansible_ssh_host=127.0.0.1 ansible_ssh_user='vagrant' ansible_sudo_pass='vagrant'
 ```
 
 ###Ping
 ```
-ansible -m ping all
 ansible -m ping host-01
-ansible -m shell -a 'free -m' host1
+ansible -m shell -a 'free -m' host-01
 ```
 
-###Deploy to host
+###Deploy
 ```
 ansible-playbook -v -skK server.yml
 ```
