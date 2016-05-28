@@ -1,0 +1,30 @@
+#install samba
+
+#enable share home directory
+
+
+#We noticed tmux is not updated to latest version, we need latest version for tmuxp
+sudo add-apt-repository ppa:pi-rho/dev
+sudo apt-get update
+sudo apt-get install tmux
+tmux -V
+
+#Also tmuxp is not installed automatically, you first need pip
+sudo apt-get install python-pip
+pip -V
+
+#Then install tmuxp
+sudo pip install tmuxp
+
+#to start the tmuxp
+tmuxp /vagrant/ansible/tmuxp/dev.tmuxp.yml
+
+#global node packages
+npm install knex
+
+npm install bower
+npm install pm2
+
+npm install node-inspector
+
+npm install jslint

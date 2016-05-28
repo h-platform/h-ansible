@@ -1,0 +1,16 @@
+apps:
+  - script: server.js
+    name: frontend
+    cwd: h-frontend/
+    env:
+      NODE_ENV: development
+  - script : index.js
+    name: database
+    cwd: h-database/
+    env:
+      NODE_ENV: development
+  - script: index.js
+    name: auth
+    cwd: b-auth/
+    env:
+      NODE_ENV: development

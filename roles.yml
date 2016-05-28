@@ -7,4 +7,6 @@
  - geerlingguy.nginx
  - geerlingguy.mysql
  - geerlingguy.git
+ - futurice.pip
+ - mrlesmithjr.samba
  - dirn.tmux

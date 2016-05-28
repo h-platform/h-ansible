@@ -11,5 +11,10 @@
     - role: geerlingguy.nginx
     - role: geerlingguy.mysql
     - role: geerlingguy.git
+    - role: futurice.pip
     - role: dirn.tmux
       tmux_install_tmuxp: true
+    - role: mrlesmithjr.samba
+      samba_users:
+        - name: 'vagrant'
+          smbpasswd: 'vagrant'
