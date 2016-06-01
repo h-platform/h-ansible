@@ -3,17 +3,28 @@ apps:
     name: frontend
     cwd: h-frontend/
     watch: true
+    ignore_watch: 
+      - "node_modules"
+      - "logs"
     env:
       NODE_ENV: development
   - script : index.js
     name: database
     cwd: h-database/
     watch: true
+    ignore_watch: 
+      - "node_modules"
+      - "images"
+      - "logs"
     env:
       NODE_ENV: development
   - script: index.js
     name: auth
     cwd: h-auth/
     watch: true
+    ignore_watch: 
+      - "node_modules"
+      - "images"
+      - "logs"
     env:
       NODE_ENV: development
