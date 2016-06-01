@@ -1,7 +1,19 @@
 #install samba
+--done via role
 
 #enable share home directory
 
+sudo nano /etc/samba/smb.conf
+
+[homes]
+   comment = Home Directories
+   browseable = yes
+   read only = no
+   create mask = 0775
+   directory mask = 0775
+
+#add samba users
+sudo smbpasswd -a vagrant
 
 #We noticed tmux is not updated to latest version, we need latest version for tmuxp
 sudo add-apt-repository ppa:pi-rho/dev
@@ -16,15 +28,17 @@ pip -V
 #Then install tmuxp
 sudo pip install tmuxp
 
-#to start the tmuxp
+#To start the tmuxp
 tmuxp /vagrant/ansible/tmuxp/dev.tmuxp.yml
 
-#global node packages
+#Global node packages
 npm install knex
-
 npm install bower
 npm install pm2
-
 npm install node-inspector
-
 npm install jslint
+
+#MySql
+mysql -uroot -p
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
+FLUSH PRIVILEGES;

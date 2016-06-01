@@ -11,6 +11,6 @@ apps:
       NODE_ENV: development
   - script: index.js
     name: auth
-    cwd: b-auth/
+    cwd: h-auth/
     env:
       NODE_ENV: development
