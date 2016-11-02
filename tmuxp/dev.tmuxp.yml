@@ -4,20 +4,20 @@ windows:
   - window_name: main
     start_directory: '~/source/'
     panes:
-      - pm2 start /home/vagrant/server/pm2/dev.yml
+      - pm2 start ~/server/pm2/dev.yml
       - pwd
   - window_name: h-frontend
     start_directory: '~/source/h-frontend'
     panes:
-      - pm2 logs frontend
+      - tail -f logs/frontend.log
       - pwd
   - window_name: h-database
     start_directory: '~/source/h-database'
     panes:
-      - pm2 logs database
+      - tail -f logs/database.log
       - pwd
   - window_name: h-auth
     start_directory: '~/source/h-auth'
     panes:
-      - pm2 logs auth
+      - tail -f logs/auth.log
       - pwd

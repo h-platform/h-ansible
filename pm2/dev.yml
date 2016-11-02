@@ -1,16 +1,24 @@
 apps:
   - script: server.js
     name: frontend
-    cwd: h-frontend/
+    cwd: /home/vagrant/source/h-frontend/
+    max_restarts: 5
     watch: true
     ignore_watch: 
       - "node_modules"
       - "logs"
     env:
       NODE_ENV: development
+    log_date_format: "YYYY-MM-DD HH:mm:ss"
+    error_file: /home/vagrant/source/h-frontend/logs/frontend.log
+    out_file: /home/vagrant/source/h-frontend/logs/frontend.log
+    merge_logs: true
+
+
   - script : index.js
     name: database
-    cwd: h-database/
+    cwd: /home/vagrant/source/h-database/
+    max_restarts: 5
     watch: true
     ignore_watch: 
       - "node_modules"
@@ -18,9 +26,16 @@ apps:
       - "logs"
     env:
       NODE_ENV: development
+    log_date_format: "YYYY-MM-DD HH:mm:ss"
+    error_file: /home/vagrant/source/h-database/logs/database.log
+    out_file: /home/vagrant/source/h-database/logs/database.log
+    merge_logs: true
+
+
   - script: index.js
     name: auth
-    cwd: h-auth/
+    cwd: /home/vagrant/source/h-auth/
+    max_restarts: 5
     watch: true
     ignore_watch: 
       - "node_modules"
@@ -28,3 +43,7 @@ apps:
       - "logs"
     env:
       NODE_ENV: development
+    log_date_format: "YYYY-MM-DD HH:ss"
+    error_file: /home/vagrant/source/h-auth/logs/auth.log
+    out_file: /home/vagrant/source/h-auth/logs/auth.log
+    merge_logs: true
